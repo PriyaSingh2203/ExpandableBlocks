@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    min-width: 360px; /* Ensures scrolling if needed */
+    padding: 20px;
+}
+
+/* Horizontal Scroll for X-Axis */
+.container {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* Pink Heading with Horizontal Lines */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.header-container::before,
+.header-container::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background-color: gray;
+    margin: 0 10px;
+}
+
+.header-container h1 {
+    color: pink;
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Blocks */
+.block {
+    width: 320px;
+    background-color: white;
+    color: black;
+    padding: 15px;
+    border: 2px solid gray;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.block.expanded {
+    width: 350px;
+    height: auto;
+    padding: 20px;
+}
+
+/* Button before "1 Unit", "2 Units", etc. */
+.block-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Circular Button */
+.circle-button {
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 3px solid gray;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-button::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.block.expanded .circle-button {
+    border-color: pink;
+}
+
+.block.expanded .circle-button::after {
+    background-color: pink;
+}
+
+/* Block Content */
+.block-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.discount {
+    background-color: pink;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.block h5 {
+    color: gray;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+/* More Info Section */
+.more-info {
+    display: none;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.block.expanded .more-info {
+    display: block;
+    margin-top: 15px;
+    border-top: 1px solid gray;
+    padding-top: 10px;
+}
+
+/* Size & Color Layout */
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3px; /* Reduced gap */
+    margin-top: 10px;
+}
+
+.option-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.option-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+select {
+    width: 90px;
+    padding: 4px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer Section */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.footer h4 {
+    font-size: 16px;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    width: 100%;
+    max-width: 320px;
+    background-color: pink;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #ff80ab;
+}
+
+
